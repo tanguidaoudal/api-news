@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% form_theme registerForm "bootstrap_4_layout.html.twig" %}
+{% block title %}Inscription || {{ parent() }}{% endblock %}
+{% block main %}
+    {{ form_start(registerForm) }}
+    {{ form_widget(registerForm) }}
+
+    <button type="submit" class="btn btn-primary">Enreg</button>
+    {{ form_end(registerForm) }}
+
+{% endblock %}

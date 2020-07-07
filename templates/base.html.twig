@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ApiNews{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jssocials.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jssocials-theme-flat.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <header>
+        {{ include('inc/navbar.html.twig') }}
+    </header>
+    {% block body %}
+
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/jssocials.min.js')}}"></script>
+    <script>
+        $("#share").jsSocials({
+            shares: ["twitter"]
+        });
+    </script>
+{% endblock %}
+</body>
+</html>

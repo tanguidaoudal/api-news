@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+
+    <section class="container">
+        <h1>Sources</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Description</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Détails</th>
+            </tr>
+            </thead>
+            {% for source in sources %}
+                <tr>
+                    <td>{{ source.name }}</td>
+                    <td>{{ source.description | raw }}</td>
+                    <td>{{ source.category | capitalize }}</td>
+                    <td><a href="{{ path('articles_source', {'id' : source.id }) }}" class="btn btn-primary">Articles de la source</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+
+    </section>
+{% endblock %}
